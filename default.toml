@@ -7,22 +7,21 @@ logdir='logs/trial1'
 
 [optim]
 lr=1e-4
-lr_backbone=1e-5
-lr_drop=4 # 200
+lr_backbone=1e-6
+lr_drop=3 # 200
 weight_decay = 1e-4
 
 [loss]
 
 [loss.matcher]
-set_cost_bbox = 5
-set_cost_giou = 2
+set_cost_class = 1
+set_cost_line = 5
 
 [loss.coef]
-bbox = 5
-giou = 2
+line = 5
 eos = 0.1
 
 [dataset]
-annot_file = '../train.json'
-img_dir = 'train'
+annot_file = './data/train.json'
+img_dir = './data/train'
 test_img_dir = 'hand_labeled_test'
