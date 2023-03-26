@@ -1,0 +1,28 @@
+[training]
+device='cpu'
+batch_size = 2
+start_epoch = 1
+epochs = 10
+logdir='logs/trial1'
+
+[optim]
+lr=1e-5
+lr_backbone=1e-6
+lr_drop=3 # 200
+weight_decay = 1e-4
+
+[loss]
+
+[loss.matcher]
+set_cost_class = 1
+set_cost_line = 5
+
+[loss.coef]
+line = 5
+eos = 0.1
+
+[dataset]
+annot_file = './data/train.json'
+img_dir = './data/train'
+test_img_dir = 'hand_labeled_test'
+
